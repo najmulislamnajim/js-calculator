@@ -1,0 +1,116 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+        .cal_wrapper{
+            margin: 0 auto;
+            width: 350px;
+            text-align: center;
+            font-size: 0%;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,.2);
+            margin-top: 100px;
+        }
+        .cal_head #result{
+            width: 345px;
+            height: 100px;
+            padding: 0px 5px;
+            font-weight: bold;
+            font-size: 32px;
+            text-align: right;
+            margin-bottom: 2px;
+            letter-spacing: 2px;
+            
+        }
+        .btn{
+            width: 87px;
+            height: 50px;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 10px;
+            background-color: rgb(107, 58, 58);
+            color: aliceblue;
+            cursor: pointer;
+        }
+        .btnstyle{
+            background-color: rgb(89, 158, 83);
+        }
+
+        .credit{
+            float: right;
+            margin-right: 400px;
+        }
+    </style>
+</head>
+<body>
+   <div class="cal_wrapper">
+       <div class="cal_head">
+           <input type="text" id="result" maxlength="18">
+
+       </div>
+
+       <div class="cal_body">
+           <input type="button" class="btn btnstyle" onclick="deleteMe('')" value="C">
+           <input type="button" class="btn btnstyle" onclick="calculate('(')" value="(">
+           <input type="button" class="btn btnstyle" onclick="calculate(')')" value=")">
+           <input type="button" class="btn btnstyle" onclick="calculate('/')" value="/">
+
+       </div>
+       <div class="cal_body">
+           <input type="button" class="btn" onclick="calculate('8')"  value="8">
+           <input type="button" class="btn" onclick="calculate('7')"  value="7">
+           <input type="button" class="btn" onclick="calculate('9')"  value="9">
+           <input type="button" class="btn btnstyle" onclick="calculate('*')"  value="*">
+
+       </div>
+       <div class="cal_body">
+           <input type="button" class="btn" onclick="calculate('4')"  value="4">
+           <input type="button" class="btn" onclick="calculate('5')"  value="5">
+           <input type="button" class="btn" onclick="calculate('6')"  value="6">
+           <input type="button" class="btn btnstyle" onclick="calculate('-')"  value="-">
+ 
+       </div>
+       <div class="cal_body">
+           <input type="button" class="btn" onclick="calculate('1')"  value="1">
+           <input type="button" class="btn" onclick="calculate('2')"  value="2">
+           <input type="button" class="btn" onclick="calculate('3')"  value="3">
+           <input type="button" class="btn btnstyle" onclick="calculate('+')" value="+">
+
+       </div>
+       <div class="cal_body">
+           <input type="button" class="btn" value="DEL" onclick="deleteMe('')" style="background-color: red;">
+           <input type="button" class="btn" onclick="calculate('0')" value="0">
+           <input type="button" class="btn" onclick="calculate('.')" value=".">
+           <input type="button" class="btn" onclick="answer()" value="=" style="background-color: rgb(170, 206, 59);">
+
+       </div>
+   </div>
+
+   <div class="credit">
+       <p>design by <strong><em>Najmul Islam Najim</em></strong></p>
+   </div>
+
+
+   <script>
+       function deleteMe(){
+           document.getElementById("result").value=""
+       }
+
+       function calculate(newValue){
+           document.getElementById("result").value+=newValue;
+       }
+
+       function answer(){
+           var a=document.getElementById("result").value;
+           var b=eval(a);
+           document.getElementById("result").value=b
+       }
+   </script>
+    
+</body>
+</html>
