@@ -83,7 +83,7 @@
 
        </div>
        <div class="cal_body">
-           <input type="button" class="btn" value="DEL" onclick="deleteMe('')" style="background-color: red;">
+           <input type="button" class="btn" value="DEL" onclick="goBack('')" style="background-color: red;">
            <input type="button" class="btn" onclick="calculate('0')" value="0">
            <input type="button" class="btn" onclick="calculate('.')" value=".">
            <input type="button" class="btn" onclick="answer()" value="=" style="background-color: rgb(170, 206, 59);">
@@ -109,6 +109,11 @@
            var a=document.getElementById("result").value;
            var b=eval(a);
            document.getElementById("result").value=b
+       }
+       
+       function goBack(){
+           var value=document.getElementById("result").value;
+        document.getElementById("result").value=value.substr(0, value.length-1);
        }
    </script>
     
